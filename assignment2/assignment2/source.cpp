@@ -5,6 +5,7 @@
 #include <sstream>
 
 
+
 struct STUDENT_DATA {
 	std::string firstName;
 	std::string lastName;
@@ -15,7 +16,7 @@ struct STUDENT_DATA {
 int main()
 {
 	std::vector<STUDENT_DATA> students;
-	std::ifstream inputFile("StudentData.txt");
+    std::ifstream inputFile("Resources\\StudentData.txt");
 
 	if (!inputFile.is_open())
 	{
