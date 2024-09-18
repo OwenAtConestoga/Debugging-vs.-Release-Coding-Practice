@@ -1,0 +1,6 @@
+﻿  source.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 248 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  assignment2.vcxproj -> C:\Users\oweno\Source\Repos\Debugging-vs.-Release-Coding-Practice\assignment2\x64\Release\assignment2.exe

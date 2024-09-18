@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\oweno\\Documents\\Year 3\\a2\\assignment2\\",
+  "WorkspaceRootPath": "C:\\Users\\oweno\\source\\repos\\Debugging-vs.-Release-Coding-Practice\\assignment2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BCF05D7F-733E-46D7-829C-B94D20EB1A63}|assignment2\\assignment2.vcxproj|C:\\Users\\oweno\\Documents\\Year 3\\a2\\assignment2\\assignment2\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{BCF05D7F-733E-46D7-829C-B94D20EB1A63}|assignment2\\assignment2.vcxproj|C:\\Users\\oweno\\source\\repos\\Debugging-vs.-Release-Coding-Practice\\assignment2\\assignment2\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{BCF05D7F-733E-46D7-829C-B94D20EB1A63}|assignment2\\assignment2.vcxproj|solutionrelative:assignment2\\source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "source.cpp",
-              "DocumentMoniker": "C:\\Users\\oweno\\Documents\\Year 3\\a2\\assignment2\\assignment2\\source.cpp",
+              "DocumentMoniker": "C:\\Users\\oweno\\source\\repos\\Debugging-vs.-Release-Coding-Practice\\assignment2\\assignment2\\source.cpp",
               "RelativeDocumentMoniker": "assignment2\\source.cpp",
-              "ToolTip": "C:\\Users\\oweno\\Documents\\Year 3\\a2\\assignment2\\assignment2\\source.cpp",
+              "ToolTip": "C:\\Users\\oweno\\source\\repos\\Debugging-vs.-Release-Coding-Practice\\assignment2\\assignment2\\source.cpp",
               "RelativeToolTip": "assignment2\\source.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-17T14:03:15.541Z",
               "EditorCaption": ""
