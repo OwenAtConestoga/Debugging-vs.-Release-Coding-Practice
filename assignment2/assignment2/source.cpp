@@ -5,7 +5,7 @@
 #include <sstream> 
 
 // Uncomment the line below to run in pre-release mode
-//#define PRE_RELEASE
+//define PRE_RELEASE
 
 struct STUDENT_DATA {
     std::string firstName;
