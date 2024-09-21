@@ -15,19 +15,18 @@ struct STUDENT_DATA {
         : firstName(first), lastName(last), email(email) {}
 };
 
-std::vector<STUDENT_DATA> readStudentData() {
+std::vector<STUDENT_DATA> processStudents() {
     std::vector<STUDENT_DATA> students;
     std::ifstream inputFile("Resources/StudentData.txt");
     if (!inputFile.is_open()) {
         std::cerr << "Error opening StudentData.txt file" << std::endl;
         return students;
     }
-
     std::string line;
     while (std::getline(inputFile, line)) {
         std::stringstream ss(line);
         std::string firstName, lastName;
-        if (std::getline(ss, firstName, ',') && std::getline(ss, lastName)) {
+        if (std::getline(ss, lastName, ',') && std::getline(ss, firstName)) {
             students.emplace_back(firstName, lastName);
         }
     }
@@ -35,14 +34,14 @@ std::vector<STUDENT_DATA> readStudentData() {
     return students;
 }
 
+std::vector<STUDENT_DATA> processStudentsEmail() {
+    std::vector<STUDENT_DATA> students = processStudents();
 #ifdef PRE_RELEASE
-void readEmailData(std::vector<STUDENT_DATA>& students) {
     std::ifstream emailFile("Resources/StudentData_Emails.txt");
     if (!emailFile.is_open()) {
         std::cerr << "Error opening StudentData_Emails.txt file" << std::endl;
-        return;
+        return students;
     }
-
     std::string email;
     size_t index = 0;
     while (std::getline(emailFile, email) && index < students.size()) {
@@ -50,36 +49,32 @@ void readEmailData(std::vector<STUDENT_DATA>& students) {
         ++index;
     }
     emailFile.close();
-}
 #endif
+    return students;
+}
 
 int main() {
+    std::vector<STUDENT_DATA> students;
+
+#ifdef PRE_RELEASE
+    std::cout << "Running pre-release version of the software." << std::endl;
+#else
+    std::cout << "Running standard version of the software." << std::endl;
+#endif
+
+    students = processStudentsEmail(); // This will work in both modes now
+
+    // print out the names only if in debug mode
 #ifdef _DEBUG
-    std::cout << "Running in Debug mode" << std::endl;
+    std::cout << "[Student List:]" << std::endl;
+    for (const STUDENT_DATA& student : students) {
+#ifdef PRE_RELEASE
+        std::cout << student.lastName << ", " << student.firstName << ", " << student.email << std::endl;
 #else
-    std::cout << "Running in Release mode" << std::endl;
+        std::cout << "First Name:" << student.firstName << " Last Name: " << student.lastName << std::endl;
 #endif
-
-#ifdef PRE_RELEASE
-    std::cout << "This is a Pre-Release version" << std::endl;
-#else
-    std::cout << "This is a Standard version" << std::endl;
-#endif
-
-    std::vector<STUDENT_DATA> students = readStudentData();
-
-#ifdef PRE_RELEASE
-    readEmailData(students);
-#endif
-
-    for (const auto& student : students) {
-        std::cout << "First Name: " << student.firstName
-            << ", Last Name: " << student.lastName;
-#ifdef PRE_RELEASE
-        std::cout << ", Email: " << student.email;
-#endif
-        std::cout << std::endl;
     }
+#endif
 
-    return 0;
+    return 1;
 }
