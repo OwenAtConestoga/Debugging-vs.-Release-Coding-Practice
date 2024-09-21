@@ -34,6 +34,7 @@ std::vector<STUDENT_DATA> processStudents() {
     return students;
 }
 
+// Process emails when in pre release
 std::vector<STUDENT_DATA> processStudentsEmail() {
     std::vector<STUDENT_DATA> students = processStudents();
 #ifdef PRE_RELEASE
@@ -62,9 +63,9 @@ int main() {
     std::cout << "Running standard version of the software." << std::endl;
 #endif
 
-    students = processStudentsEmail(); // This will work in both modes now
+    students = processStudentsEmail(); 
 
-    // print out the names only if in debug mode
+// print out the names only if in debug mode
 #ifdef _DEBUG
     std::cout << "[Student List:]" << std::endl;
     for (const STUDENT_DATA& student : students) {
